@@ -1,0 +1,20 @@
+{
+  "name": "kf-tailwind",
+  "version": "1.0.2",
+  "description": "Tailwind 4 variables and styles",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kreftforeningen/kf-tailwind.git"
+  },
+  "keywords": [
+    "tailwind",
+    "css"
+  ],
+  "author": "Asbjørn Ness",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kreftforeningen/kf-tailwind/issues"
+  },
+  "homepage": "https://github.com/kreftforeningen/kf-tailwind#readme"
+}
