@@ -1,0 +1,173 @@
+@import "fonts/index.css";
+
+@theme {
+  --font-plex-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica Neue, Arial, "Noto Sans",
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
+  --font-plex-condensed: "IBM Plex Sans Condensed", ui-sans-serif, system-ui;
+  --font-plex-serif: "IBM Plex Serif", ui-serif, Georgia, Cambria,
+    Times New Roman;
+
+  --kf-hex-color-black: #000;
+  --kf-hex-color-white: #fff;
+  --kf-hex-color-blue: #469eba;
+  --kf-hex-color-green: #50750f;
+  --kf-hex-color-grey: #666;
+  --kf-hex-color-orange: #e49034;
+  --kf-hex-color-pink: #a94773;
+  --kf-hex-color-purple: #773e89;
+  --kf-hex-color-red: #bc2967;
+  --kf-hex-color-vipps: #ff5b24;
+
+  --kf-color-grey-50: oklch(98.5% 0 0);
+  --kf-color-grey-100: oklch(96.086% 0 0);
+  --kf-color-grey-200: oklch(90.372% 0 0);
+  --kf-color-grey-300: oklch(84.258% 0 0);
+  --kf-color-grey-400: oklch(67.144% 0 0);
+  --kf-color-grey-500: oklch(51.03% 0 0);
+  --kf-color-grey-600: oklch(40.244% 0 0);
+  --kf-color-grey-700: oklch(34.358% 0 0);
+  --kf-color-grey-800: oklch(25.072% 0 0);
+  --kf-color-grey-900: oklch(19.586% 0 0);
+  --kf-color-grey-950: oklch(14.5% 0 0);
+
+  --kf-color-blue-50: oklch(98.4% 0.019 201.08);
+  --kf-color-blue-100: oklch(96.4% 0.03952 203.6);
+  --kf-color-blue-200: oklch(93.3% 0.06903 205.25);
+  --kf-color-blue-300: oklch(88.9% 0.11055 207.29);
+  --kf-color-blue-400: oklch(82.1% 0.13207 211.74);
+  --kf-color-blue-500: oklch(75.5% 0.11558 215.43);
+  --kf-color-blue-600: oklch(65.7% 0.0931 221.93);
+  --kf-color-blue-700: oklch(55.6% 0.08032 223.33);
+  --kf-color-blue-800: oklch(47.4% 0.06855 224.49);
+  --kf-color-blue-900: oklch(41% 0.06178 227.6);
+  --kf-color-blue-950: oklch(30.2% 0.056 229.9);
+
+  --kf-color-green-50: oklch(98.6% 0.031 118.01);
+  --kf-color-green-100: oklch(96.463% 0.06314 119.58);
+  --kf-color-green-200: oklch(93.326% 0.11929 121.57);
+  --kf-color-green-300: oklch(88.989% 0.18443 123.92);
+  --kf-color-green-400: oklch(83.151% 0.22257 126.1);
+  --kf-color-green-500: oklch(75.614% 0.21371 128.1);
+  --kf-color-green-600: oklch(63.377% 0.17686 128.94);
+  --kf-color-green-700: oklch(51.54% 0.13 128.84);
+  --kf-color-green-800: oklch(44.193% 0.106 128.18);
+  --kf-color-green-900: oklch(39.947% 0.092 128.31);
+  --kf-color-green-950: oklch(27.4% 0.072 129.36);
+
+  --kf-color-orange-50: oklch(98% 0.016 81.45);
+  --kf-color-orange-100: oklch(94.775% 0.02825 82.93);
+  --kf-color-orange-200: oklch(88.85% 0.0565 78.463);
+  --kf-color-orange-300: oklch(81.825% 0.09875 74.056);
+  --kf-color-orange-400: oklch(72.5% 0.144 63.7);
+  --kf-color-orange-500: oklch(68.417% 0.1805 55.37);
+  --kf-color-orange-600: oklch(62.961% 0.19462 48.062);
+  --kf-color-orange-700: oklch(54.074% 0.17437 45.326);
+  --kf-color-orange-800: oklch(46.167% 0.144 45.07);
+  --kf-color-orange-900: oklch(40.383% 0.1165 45.938);
+  --kf-color-orange-950: oklch(26.6% 0.079 44.025);
+
+  --kf-color-pink-50: oklch(97.1% 0.014 333.87);
+  --kf-color-pink-100: oklch(95.006% 0.01573 332.93);
+  --kf-color-pink-200: oklch(90.311% 0.03646 333.9);
+  --kf-color-pink-300: oklch(82.917% 0.08319 336.69);
+  --kf-color-pink-400: oklch(72.623% 0.15291 340.43);
+  --kf-color-pink-500: oklch(66.629% 0.17964 344.98);
+  --kf-color-pink-600: oklch(60.434% 0.17537 351.26);
+  --kf-color-pink-700: oklch(53.94% 0.1371 354.63);
+  --kf-color-pink-800: oklch(46.86% 0.12973 354.49);
+  --kf-color-pink-900: oklch(41.28% 0.12437 353.1);
+  --kf-color-pink-950: oklch(28.4% 0.109 354.58);
+
+  --kf-color-purple-50: oklch(97.695% 0.01681 312.29);
+  --kf-color-purple-100: oklch(95.876% 0.0305 312.71);
+  --kf-color-purple-200: oklch(91.652% 0.06345 313.38);
+  --kf-color-purple-300: oklch(85.148% 0.1223 316.32);
+  --kf-color-purple-400: oklch(76.216% 0.20689 317.39);
+  --kf-color-purple-500: oklch(69.69% 0.26395 316.33);
+  --kf-color-purple-600: oklch(63.487% 0.26693 314.8);
+  --kf-color-purple-700: oklch(56.918% 0.22259 315.86);
+  --kf-color-purple-800: oklch(51.049% 0.17624 316.5);
+  --kf-color-purple-900: oklch(46.68% 0.1309 317.52);
+  --kf-color-purple-950: oklch(29.3% 0.136 317.57);
+
+  --kf-color-red-50: oklch(97.1% 0.014 340.03);
+  --kf-color-red-100: oklch(94.936% 0.0229 339.09);
+  --kf-color-red-200: oklch(90.171% 0.0508 340.06);
+  --kf-color-red-300: oklch(82.707% 0.1047 342.85);
+  --kf-color-red-400: oklch(72.343% 0.1816 346.59);
+  --kf-color-red-500: oklch(66.279% 0.2155 351.14);
+  --kf-color-red-600: oklch(60.014% 0.2184 -2.584);
+  --kf-color-red-700: oklch(53.45% 0.1873 0.79);
+  --kf-color-red-800: oklch(46.533% 0.1632 0.647);
+  --kf-color-red-900: oklch(41.117% 0.1411 -0.736);
+  --kf-color-red-950: oklch(28.4% 0.109 0.739);
+
+  --kf-color-vipps-50: oklch(98% 0.016 69.868);
+  --kf-color-vipps-100: oklch(96.03% 0.03587 71.348);
+  --kf-color-vipps-200: oklch(91.36% 0.07173 66.881);
+  --kf-color-vipps-300: oklch(85.59% 0.1216 62.474);
+  --kf-color-vipps-400: oklch(77.52% 0.17447 52.118);
+  --kf-color-vipps-500: oklch(73.65% 0.20233 43.788);
+  --kf-color-vipps-600: oklch(68.38% 0.2092 37.3);
+  --kf-color-vipps-700: oklch(58.135% 0.1854 34.586);
+  --kf-color-vipps-800: oklch(48.89% 0.1506 33.488);
+  --kf-color-vipps-900: oklch(41.745% 0.1198 34.356);
+  --kf-color-vipps-950: oklch(26.6% 0.079 32.443);
+}
+
+@theme inline {
+  --font-sans: var(--font-plex-sans);
+  --font-condensed: var(--font-plex-condensed);
+  --font-serif: var(--font-plex-serif);
+
+  --kf-color-black: var(--kf-color-grey-950);
+  --kf-color-white: var(--kf-color-grey-50);
+  --kf-color-blue: var(--kf-color-blue-600);
+  --kf-color-green: var(--kf-color-green-700);
+  --kf-color-grey: var(--kf-color-grey-500);
+  --kf-color-orange: var(--kf-color-orange-400);
+  --kf-color-pink: var(--kf-color-pink-700);
+  --kf-color-purple: var(--kf-color-purple-900);
+  --kf-color-red: var(--kf-color-red-700);
+  --kf-color-vipps: var(--kf-color-vipps-600);
+}
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-condensed;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h5 {
+    @apply text-lg;
+  }
+  h6 {
+    @apply text-base;
+  }
+
+  blockquote {
+    @apply font-serif;
+  }
+}
