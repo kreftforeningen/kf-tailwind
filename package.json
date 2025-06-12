@@ -1,6 +1,6 @@
 {
   "name": "kf-tailwind",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Tailwind 4 variables and styles.",
   "main": "index.js",
   "repository": {
