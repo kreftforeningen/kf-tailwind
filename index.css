@@ -1,4 +1,4 @@
-@import "fonts/index.css";
+@import "./fonts/index.css";
 
 @theme {
   --font-plex-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system,
