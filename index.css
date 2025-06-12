@@ -1,5 +1,4 @@
 @import "./fonts/index.css";
-@import "./shadcn/index.css";
 
 /* Dark mode support */
 @custom-variant dark (&:is(.dark *));
@@ -230,7 +229,7 @@
   --destructive: var(--color-red-700);
   --border: var(--color-grey-300);
   --input: var(--color-grey-50);
-  --ring: var(--color-grey-400);
+  --ring: var(--color-blue-400);
   --chart-1: var(--color-orange-600);
   --chart-2: var(--color-green-500);
   --chart-3: var(--color-grey-900);
@@ -243,7 +242,7 @@
   --sidebar-accent: var(--color-grey-200);
   --sidebar-accent-foreground: var(--color-grey-900);
   --sidebar-border: var(--color-grey-100);
-  --sidebar-ring: var(--color-grey-400);
+  --sidebar-ring: var(--color-blue-400);
 }
 
 /* Shadcn variables */
@@ -266,7 +265,7 @@
   --destructive: var(--color-red-500);
   --border: var(--color-grey-400);
   --input: var(--color-white);
-  --ring: var(--color-grey-500);
+  --ring: var(--color-blue-500);
   --chart-1: var(--color-blue-400);
   --chart-2: var(--color-green-400);
   --chart-3: var(--color-red-500);
@@ -279,7 +278,7 @@
   --sidebar-accent: var(--color-grey-800);
   --sidebar-accent-foreground: var(--color-grey-200);
   --sidebar-border: var(--color-grey-500);
-  --sidebar-ring: var(--color-grey-500);
+  --sidebar-ring: var(--color-blue-500);
 }
 
 @layer base {
