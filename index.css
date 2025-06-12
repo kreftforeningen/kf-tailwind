@@ -154,8 +154,8 @@
   --font-condensed: var(--font-plex-condensed);
   --font-serif: var(--font-plex-serif);
 
-  --color-black: var(--color-grey-950);
-  --color-white: var(--color-grey-50);
+  --color-black: oklch(0% 0 0);
+  --color-white: oklch(100% 0 0);
   --color-blue: var(--color-blue-600);
   --color-green: var(--color-green-700);
   --color-grey: var(--color-grey-500);
@@ -219,10 +219,10 @@
   --card-foreground: var(--color-grey-950);
   --popover: var(--color-grey-50);
   --popover-foreground: var(--color-grey-950);
-  --primary: var(--color-grey-900);
-  --primary-foreground: var(--color-grey-50);
-  --secondary: var(--color-grey-50);
-  --secondary-foreground: var(--color-grey-900);
+  --primary: var(--color-blue-600);
+  --primary-foreground: var(--color-blue-50);
+  --secondary: var(--color-red-50);
+  --secondary-foreground: var(--color-red-900);
   --muted: var(--color-grey-50);
   --muted-foreground: var(--color-grey-500);
   --accent: var(--color-grey-50);
