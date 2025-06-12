@@ -177,3 +177,38 @@
     @apply font-serif;
   }
 }
+
+@layer utilities {
+  @keyframes fade-in-out {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes pulseText {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .animate-fade-in-out {
+    animation: fade-in-out 5s ease-in-out;
+  }
+
+  .animate-pulse-text {
+    animation: pulseText 1s ease-in-out infinite;
+  }
+}
