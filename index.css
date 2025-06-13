@@ -220,8 +220,8 @@
   --popover-foreground: var(--color-grey-950);
   --primary: var(--color-blue-600);
   --primary-foreground: var(--color-blue-50);
-  --secondary: var(--color-red-50);
-  --secondary-foreground: var(--color-red-900);
+  --secondary: var(--color-pink-500);
+  --secondary-foreground: var(--color-pink-50);
   --muted: var(--color-grey-50);
   --muted-foreground: var(--color-grey-500);
   --accent: var(--color-grey-200);
