@@ -42,6 +42,19 @@ Colors in oklch. Main colors also in hex.
 - Pulsating text
 - Fade in / fade out
 
+## Color Extraction
+
+To extract all color variables from the CSS into JSON files, run:
+
+```sh
+pnpm run build
+```
+
+This will generate:
+
+- `json/colors.json` with all `--kf-hex-color-***` variables
+- `json/extended-colors.json` with all `--color-***` variables from the `@theme { ... }` block
+
 ## NPM.js
 
 This git is published as a package on https://www.npmjs.com/package/kf-tailwind

@@ -320,6 +320,10 @@
   blockquote {
     @apply font-serif;
   }
+
+  blockquote cite {
+    @apply font-sans text-sm;
+  }
 }
 
 @layer components {
