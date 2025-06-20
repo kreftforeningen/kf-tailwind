@@ -1,4 +1,5 @@
 @import "./fonts/index.css";
+@import "tailwindcss";
 
 /* Dark mode support */
 @custom-variant dark (&:is(.dark *));
