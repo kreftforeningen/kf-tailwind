@@ -244,6 +244,11 @@
   --sidebar-accent-foreground: var(--color-grey-900);
   --sidebar-border: var(--color-grey-100);
   --sidebar-ring: var(--color-blue-400);
+  --chart-1: var(--color-orange-800);
+  --chart-2: var(--color-green-800);
+  --chart-3: var(--color-blue-800);
+  --chart-4: var(--color-orange-400);
+  --chart-5: var(--color-orange-600);
 }
 
 /* Shadcn variables */
@@ -280,6 +285,11 @@
   --sidebar-accent-foreground: var(--color-grey-200);
   --sidebar-border: var(--color-grey-500);
   --sidebar-ring: var(--color-blue-500);
+  --chart-1: var(--color-blue-400);
+  --chart-2: var(--color-green-400);
+  --chart-3: var(--color-orange-400);
+  --chart-4: var(--color-purple-400);
+  --chart-5: var(--color-pink-400);
 }
 
 @layer base {
@@ -324,11 +334,5 @@
 
   blockquote cite {
     @apply font-sans text-sm;
-  }
-}
-
-@layer components {
-  .btn {
-    @apply bg-primary text-white px-4 py-2 rounded-md;
   }
 }
