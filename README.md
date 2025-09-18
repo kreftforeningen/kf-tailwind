@@ -26,7 +26,7 @@ Colors in oklch. Main colors also in hex.
 - KF Red
 - KF Pink
 - KF Purple
-- Grey
+- Gray
 - Black
 - White
 - Vipps

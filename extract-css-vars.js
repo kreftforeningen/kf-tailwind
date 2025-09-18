@@ -35,10 +35,80 @@ while ((themeBlockMatch = themeBlockRegex.exec(css)) !== null) {
   }
 }
 
-// Convert to array format with "values" object
+// Utilities to parse OKLCH and convert to RGB/HEX
+function parseOklch(oklchString) {
+  // Accept forms like: oklch(0.736 0.15 352.18) or oklch(73.6% 0.15 352.18deg)
+  const match = /oklch\(\s*([^\s]+)\s+([^\s]+)\s+([^\s\)]+)\s*\)/i.exec(
+    oklchString
+  );
+  if (!match) return null;
+  let [_, lStr, cStr, hStr] = match;
+  let L = lStr.endsWith("%") ? parseFloat(lStr) / 100 : parseFloat(lStr);
+  const C = parseFloat(cStr);
+  let h = hStr.endsWith("deg") ? parseFloat(hStr) : parseFloat(hStr);
+  if (Number.isNaN(L) || Number.isNaN(h) || Number.isNaN(C)) return null;
+  // Clamp L to [0,1]
+  L = Math.min(1, Math.max(0, L));
+  return { L, C, h };
+}
+
+function oklchToRgb({ L, C, h }) {
+  const hRad = (h * Math.PI) / 180;
+  const aComp = C * Math.cos(hRad);
+  const bComp = C * Math.sin(hRad);
+
+  const l_ = L + 0.3963377774 * aComp + 0.2158037573 * bComp;
+  const m_ = L - 0.1055613458 * aComp - 0.0638541728 * bComp;
+  const s_ = L - 0.0894841775 * aComp - 1.291485548 * bComp;
+
+  const l = l_ * l_ * l_;
+  const m = m_ * m_ * m_;
+  const s = s_ * s_ * s_;
+
+  let rLin = 4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s;
+  let gLin = -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s;
+  let bLin = -0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s;
+
+  function linToSrgb(x) {
+    return x <= 0.0031308 ? 12.92 * x : 1.055 * Math.pow(x, 1 / 2.4) - 0.055;
+  }
+
+  let r = Math.round(Math.min(1, Math.max(0, linToSrgb(rLin))) * 255);
+  let g = Math.round(Math.min(1, Math.max(0, linToSrgb(gLin))) * 255);
+  let blue = Math.round(Math.min(1, Math.max(0, linToSrgb(bLin))) * 255);
+  return { r, g, b: blue };
+}
+
+function rgbToHex({ r, g, b }) {
+  const toHex = (n) => n.toString(16).padStart(2, "0");
+  return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+}
+
+function rgbToRgbaString({ r, g, b }) {
+  return `rgba(${r}, ${g}, ${b}, 1)`;
+}
+
+function enrichValuesWithFormats(values) {
+  const enriched = {};
+  for (const [shade, oklchValue] of Object.entries(values)) {
+    const parsed = parseOklch(oklchValue);
+    if (!parsed) {
+      enriched[shade] = { oklch: oklchValue, hex: null, rgba: null };
+      continue;
+    }
+    const rgb = oklchToRgb(parsed);
+    const hex = rgbToHex(rgb);
+    const rgba = rgbToRgbaString(rgb);
+    enriched[shade] = { oklch: oklchValue, hex, rgba };
+  }
+  return enriched;
+}
+
+// Convert to array format with formatted values and a CSS variable name
 const colorArray = Object.entries(colorGroups).map(([name, values]) => ({
   name,
-  values,
+  variable: `--color-${name}`,
+  values: enrichValuesWithFormats(values),
 }));
 
 // Split out vipps and pink-ribbon
@@ -122,11 +192,13 @@ function resolveOklchForBaseName(baseName) {
 }
 
 // Build the requested array structure with hex, oklch, and rgba
-const basicColors = Object.entries(basicHexColors).map(([name, hex]) => {
-  const oklch = resolveOklchForBaseName(name);
+// Use the full variable name as the exported name (e.g., kf-hex-color-black)
+const basicColors = Object.entries(basicHexColors).map(([baseName, hex]) => {
+  const oklch = resolveOklchForBaseName(baseName);
+  const varName = `--kf-hex-color-${baseName}`;
   const rgba = hexToRgbaString(hex);
   return {
-    name,
+    name: varName,
     values: {
       hex,
       oklch: oklch ?? null,

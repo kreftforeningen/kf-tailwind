@@ -1,6 +1,6 @@
 [
   {
-    "name": "black",
+    "name": "--kf-hex-color-black",
     "values": {
       "hex": "#000",
       "oklch": "oklch(0% 0 0)",
@@ -8,7 +8,7 @@
     }
   },
   {
-    "name": "white",
+    "name": "--kf-hex-color-white",
     "values": {
       "hex": "#fff",
       "oklch": "oklch(100% 0 0)",
@@ -16,7 +16,7 @@
     }
   },
   {
-    "name": "blue",
+    "name": "--kf-hex-color-blue",
     "values": {
       "hex": "#469eba",
       "oklch": "oklch(0.5124 0.0769 229.13)",
@@ -24,7 +24,7 @@
     }
   },
   {
-    "name": "green",
+    "name": "--kf-hex-color-green",
     "values": {
       "hex": "#50750f",
       "oklch": "oklch(0.5154 0.13 128.84)",
@@ -32,7 +32,7 @@
     }
   },
   {
-    "name": "grey",
+    "name": "--kf-hex-color-gray",
     "values": {
       "hex": "#666",
       "oklch": "oklch(51.03% 0 0)",
@@ -40,7 +40,7 @@
     }
   },
   {
-    "name": "orange",
+    "name": "--kf-hex-color-orange",
     "values": {
       "hex": "#e49034",
       "oklch": "oklch(0.7703 0.1289 70.5)",
@@ -48,7 +48,7 @@
     }
   },
   {
-    "name": "pink",
+    "name": "--kf-hex-color-pink",
     "values": {
       "hex": "#a94773",
       "oklch": "oklch(0.4964 0.1319 357.16)",
@@ -56,7 +56,7 @@
     }
   },
   {
-    "name": "purple",
+    "name": "--kf-hex-color-purple",
     "values": {
       "hex": "#773e89",
       "oklch": "oklch(0.3771 0.0897 319.73)",
@@ -64,7 +64,7 @@
     }
   },
   {
-    "name": "red",
+    "name": "--kf-hex-color-red",
     "values": {
       "hex": "#bc2967",
       "oklch": "oklch(0.5345 0.1873 0.79)",
@@ -72,7 +72,7 @@
     }
   },
   {
-    "name": "vipps",
+    "name": "--kf-hex-color-vipps",
     "values": {
       "hex": "#ff5b24",
       "oklch": "oklch(0.6186 0.2288 32.46)",
