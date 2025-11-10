@@ -1,9 +1,14 @@
 {
   "name": "kf-tailwind",
-  "version": "1.6.2",
+  "version": "2.0.0",
   "description": "Tailwind 4 variables and styles.",
   "type": "module",
-  "main": "index.js",
+  "style": "index.css",
+  "exports": {
+    ".": {
+      "default": "./index.css"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kreftforeningen/kf-tailwind.git"
